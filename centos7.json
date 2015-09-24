@@ -31,11 +31,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/CentOS-6.7-x86_64-minimal.iso",
-        "http://centos.mirrors.hoobly.com/6.7/isos/x86_64/CentOS-6.7-x86_64-minimal.iso"
+        "iso/CentOS-7-x86_64-Minimal-1503-01.iso",
+        "http://ftp.funet.fi/pub/Linux/mirrors/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "9381a24b8bee2fed0c26896141a64b69",
+      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -43,13 +43,13 @@
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-centos-6.6-x86_64",
+      "vm_name": "packer-centos-7-x86_64",
       "vboxmanage": [
         [
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "512"
+          "4096"
         ],
         [
           "modifyvm",
@@ -70,28 +70,28 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/CentOS-6.7-x86_64-minimal.iso",
-        "http://centos.mirrors.hoobly.com/6.7/isos/x86_64/CentOS-6.7-x86_64-minimal.iso"
+        "iso/CentOS-7-x86_64-Minimal-1503-01.iso",
+        "http://ftp.funet.fi/pub/Linux/mirrors/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "9381a24b8bee2fed0c26896141a64b69",
+      "iso_checksum": "d07ab3e615c66a8b2e9a50f4852e6a77",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "tools_upload_flavor": "linux",
-      "vm_name": "packer-centos-6.6-x86_64",
+      "vm_name": "packer-centos-7-x86_64",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
-        "memsize": "512",
+        "memsize": "4096",
         "numvcpus": "2"
       }
     }
   ],
   "post-processors": [
     {
-      "output": "builds/{{.Provider}}-centos6.box",
+      "output": "builds/{{.Provider}}-centos7.box",
       "type": "vagrant"
     }
   ]

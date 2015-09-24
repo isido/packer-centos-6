@@ -1,8 +1,18 @@
-# Packer Example - CentOS 6 minimal Vagrant Box using Ansible provisioner
+# Packer Example - CentOS 7 minimal Vagrant Box using Ansible provisioner
 
-**Current CentOS Version Used**: 6.7
+**Current CentOS Version Used**: 7
 
-This example build configuration installs and configures CentOS 6 x86_64 minimal using Ansible, and then generates two Vagrant box files, for:
+# About this fork
+
+This is a quick and dirty fork of Jeff Geerlings's packer file CentOS 6, modified to work with CentOS 7. Things to note:
+
+  - I've tested only virtualbox-iso, not vmware build
+  - You probably need to check the paths in ``centos7.json``-file, since CentOS doesn't seem to provide old point releases
+  - Virtual machine has 4GBs of memory, adjust if necessary
+
+-- 
+
+This example build configuration installs and configures CentOS 7 x86_64 minimal using Ansible, and then generates two Vagrant box files, for:
 
   - VirtualBox
   - VMware
@@ -30,13 +40,13 @@ If you don't have Ansible installed (perhaps you're using a Windows PC?), you ca
 
 Make sure all the required software (listed above) is installed, then cd to the directory containing this README.md file, and run:
 
-    $ packer build centos6.json
+    $ packer build centos7.json
 
 After a few minutes, Packer should tell you the box was generated successfully.
 
 If you want to only build a box for one of the supported virtualization platforms (e.g. only build the VMware box), add `--only=vmware-iso` to the `packer build` command:
 
-    $ packer build --only=vmware-iso centos6.json
+    $ packer build --only=vmware-iso centos7.json
 
 ## License
 
@@ -44,4 +54,4 @@ MIT license.
 
 ## Author Information
 
-Created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+Created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/). Forked for CentOS 7 Ilja Sidoroff.
