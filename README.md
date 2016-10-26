@@ -8,7 +8,8 @@ This is a quick and dirty fork of Jeff Geerlings's packer file CentOS 6, modifie
 
   - I've tested only virtualbox-iso, not vmware build
   - You probably need to check the paths in ``centos7.json``-file, since CentOS doesn't seem to provide old point releases
-  - Virtual machine has 4GBs of memory, adjust if necessary
+  - Virtual machine has 2GBs of memory, adjust if necessary
+  - in `centos7.json` ansible role paths are `/usr/local/etc...` as the current Homebrew. Adjust to `/etc...` if necessary
 
 -- 
 
